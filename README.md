@@ -86,7 +86,7 @@ we will need to fill in the constructor parameters with our designated `employee
 
 Test the `deposit` function by sending various values. Keep an eye on the `employee` balances as we send different amounts of Ether to the contract and ensure the logic is executing properly.
 
-![Remix Testing](Images/remix-test.png)
+![Remix Deploy](Images/profit-split.png)
 
 ### Level Two: The `TieredProfitSplitter` Contract
 
@@ -124,7 +124,14 @@ Using the starter code, within the `deposit` function, perform the following:
 
   * The provided `balance` function can be used as a test to see if the logic we have in the `deposit` function is valid. Since all of the Ether should be transferred to employees, this function should always return `0`, since the contract should never store Ether itself.
 
+
   * Note: The 100 wei threshold is due to the way we calculate the points. If we send less than 100 wei, for example, 80 wei, `points` would equal `0` because `80 / 100` equals `0` because the remainder is discarded. We will learn more advanced arbitrary precision division later in the course. In this case, we can disregard the threshold as 100 wei is a significantly smaller value than the Ether or Gwei units that are far more commonly used in the real world (most people aren't sending less than a penny's worth of Ether).
+
+![Remix Testing](Images/tire-split.png)
+
+![Remix Testing](Images/tire-split-deposit.png)
+
+
 
 ### Level Three: The `DeferredEquityPlan` Contract
 
@@ -182,17 +189,8 @@ Using the starter code, perform the following:
     }
     ```
 
-  * Once we are satisfied with our contract's logic, revert the `fakenow` testing logic.
+![Remix Testing](Images/deferred.png)
 
-* Congratulate ourself for building such complex smart contracts in our first week of Solidity! we are learning specialized skills that are highly desired in the blockchain industry!
-
-### Deploy the contracts to a live Testnet
-
-Once we feel comfortable with our contracts, point MetaMask to the Kovan or Ropsten network. Ensure we have test Ether on this network!
-
-After switching MetaMask to Kovan, deploy the contracts as before and copy/keep a note of their deployed addresses. The transactions will also be in our MetaMask history, and on the blockchain permanently to explore later.
-
-![Remix Deploy](Images/remix-deploy.png)
 
 ## Resources
 
